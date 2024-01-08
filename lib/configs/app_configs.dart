@@ -53,4 +53,22 @@ class AppConfigs {
       ),
     );
   }
+
+  static List<String> brands = [
+    'Nike',
+    'Adidas',
+    'Puma',
+    'Under Armour',
+    'Reebok',
+    'New Balance',
+    'ASICS',
+    'Converse',
+    'Fila',
+    'Lacoste',
+    'Mizuno',
+    'UMBRO',
+    'Diadora',
+    'Kappa',
+    'Wilson',
+  ];
 }
