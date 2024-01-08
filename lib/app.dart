@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoesap/configs/app_theme.dart';
+import 'package:shoesap/screens/home/home_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -6,12 +8,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Placeholder(),
+      title: 'Shoes app',
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      home: const HomeScreen(),
     );
   }
 }
