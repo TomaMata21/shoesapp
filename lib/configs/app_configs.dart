@@ -76,4 +76,12 @@ class AppConfigs {
     'Featured',
     'Upcoming',
   ];
+
+  static List<IconData> icons = [
+    Icons.home_outlined,
+    Icons.favorite_border,
+    Icons.location_on_outlined,
+    Icons.shopping_cart_outlined,
+    Icons.person_2_outlined,
+  ];
 }

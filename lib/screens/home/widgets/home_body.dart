@@ -8,14 +8,14 @@ import 'package:shoesap/configs/app_theme.dart';
 class HomeBody extends StatelessWidget {
   HomeBody({super.key});
 
-  final PageController _pageController = PageController(viewportFraction: 0.8);
+  final PageController _pageController = PageController(viewportFraction: 0.7);
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return SizedBox(
-      height: height * 0.4,
+      height: height * 0.35,
       child: PageView(
         controller: _pageController,
         scrollDirection: Axis.horizontal,

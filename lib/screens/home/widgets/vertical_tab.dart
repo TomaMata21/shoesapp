@@ -22,7 +22,7 @@ class _VerticalTabState extends State<VerticalTab> {
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
     return Container(
-      height: height * 0.4,
+      height: height * 0.35,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Center(
         child: SingleChildScrollView(
