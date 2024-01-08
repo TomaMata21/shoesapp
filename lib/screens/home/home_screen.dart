@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shoesap/configs/app_configs.dart';
 import 'package:shoesap/configs/app_theme.dart';
+import 'package:shoesap/screens/home/widgets/home_body.dart';
 import 'package:shoesap/screens/home/widgets/home_tab.dart';
+import 'package:shoesap/screens/home/widgets/vertical_tab.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: AppTheme.white,
@@ -62,7 +64,16 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Column(
           children: [
-            HomeTab(),
+            const HomeTab(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const VerticalTab(),
+                Expanded(
+                  child: HomeBody(),
+                ),
+              ],
+            ),
           ],
         ),
       ),

@@ -41,7 +41,7 @@ class AppConfigs {
 
   static List<Shoe> getShoes() {
     return List.generate(
-      12,
+      16,
       (index) => Shoe(
         name: getRandomName(),
         image: Assets.images(index + 1),
@@ -70,5 +70,10 @@ class AppConfigs {
     'Diadora',
     'Kappa',
     'Wilson',
+  ];
+  static List<String> menus = [
+    'New',
+    'Featured',
+    'Upcoming',
   ];
 }
