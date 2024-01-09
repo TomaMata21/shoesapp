@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:shoesap/configs/app_configs.dart';
 import 'package:shoesap/configs/app_theme.dart';
+import 'package:shoesap/screens/home/widgets/custom_bottom_navigation.dart';
 import 'package:shoesap/screens/home/widgets/home_body.dart';
 import 'package:shoesap/screens/home/widgets/home_bottom.dart';
 import 'package:shoesap/screens/home/widgets/home_tab.dart';
@@ -109,21 +109,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: BottomNavigationBar(
-            backgroundColor: AppTheme.lightGrey,
-            elevation: 0,
-            items: AppConfigs.icons.map((data) =>  BottomNavigationBarItem(
-              backgroundColor: AppTheme.lightGrey,
-              icon: Icon(
-                data ,
-                color: data == Icons.home_outlined ? AppTheme.primary : AppTheme.grey,
-              ),
-              label: "",
-            )).toList(),
-          ),
-        ),
+        bottomNavigationBar: const CustomBottomNavigation(),
       ),
     );
   }

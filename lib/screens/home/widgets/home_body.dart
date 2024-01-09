@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:shoesap/configs/app_configs.dart';
 import 'package:shoesap/configs/app_theme.dart';
+import 'package:shoesap/screens/home/shoe_detail_screen.dart';
 
 class HomeBody extends StatelessWidget {
   HomeBody({super.key});
@@ -20,13 +21,21 @@ class HomeBody extends StatelessWidget {
         controller: _pageController,
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        children: AppConfigs.getShoes()
-            .map(
-              (shoe) => Container(
+        children: AppConfigs.getShoes().map(
+          (shoe) {
+            final color = AppConfigs.getRandomAccentColor();
+            return GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        ShoeDetailScreen(shoe: shoe, color: color)),
+              ),
+              child: Container(
                 width: width * 0.6,
                 margin: EdgeInsets.symmetric(horizontal: width * 0.03),
                 decoration: BoxDecoration(
-                  color: AppConfigs.getRandomAccentColor(),
+                  color: color,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Stack(
@@ -109,8 +118,9 @@ class HomeBody extends StatelessWidget {
                   ],
                 ),
               ),
-            )
-            .toList(),
+            );
+          },
+        ).toList(),
       ),
     );
   }
